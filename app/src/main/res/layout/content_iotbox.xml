@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimaryDark"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+        <com.ramotion.foldingcell.FoldingCell
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/folding_cellLED"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="337dp"
+                android:id="@+id/LEDcontent"
+                android:visibility="gone"
+                android:background="@color/colorPrimary"
+
+                >
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/ledText"
+                    android:textColor="@color/white"
+                    android:hint="@string/LCD_hint"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_gravity="left|top" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Red"
+                    android:id="@+id/redTextView" />
+
+                <SeekBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/redSeekBar"
+                    android:max="255"
+                    android:progress="59"
+                    android:indeterminate="false"
+                    android:layout_below="@+id/redTextView" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Green"
+                    android:id="@+id/greenTextView" />
+
+                <SeekBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/greenSeekBar"
+                    android:max="255"
+                    android:progress="120"
+                    android:indeterminate="false"
+                    android:layout_below="@+id/greenTextView"
+                    android:layout_alignStart="@+id/greenTextView"
+                    android:layout_alignEnd="@+id/redSeekBar" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blue"
+                    android:id="@+id/blueTextView"
+                    android:layout_alignStart="@+id/greenSeekBar" />
+
+                <SeekBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/blueSeekBar"
+                    android:max="255"
+                    android:progress="194"
+                    android:indeterminate="false"
+                    android:layout_below="@+id/blueTextView"
+                    android:layout_alignStart="@+id/blueTextView"
+                    android:layout_toStartOf="@+id/fab" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/colorpicker"
+                    android:id="@+id/imageView4" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:src="@android:drawable/sym_action_chat"
+                    android:layout_marginLeft="@dimen/fab_margin"
+                    android:layout_marginRight="@dimen/fab_margin"
+                    android:layout_marginTop="40dp" />
+
+
+            </LinearLayout>
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/LEDtitle"
+                android:background="@color/colorPrimary"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/nav_bar_custom_imageView"
+                    android:src="@drawable/lcd"
+                    android:layout_margin="8dp"
+                    android:layout_gravity="left|center_vertical" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Change LCD Display"
+                    android:id="@+id/lcdTextView"
+                    android:layout_alignParentTop="true"
+                    android:textColor="@color/colorBlack"
+                    android:layout_toEndOf="@+id/nav_bar_custom_imageView"
+                    android:layout_gravity="center" />
+
+            </FrameLayout>
+            <!--
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:background="@color/colorPrimary"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.galactus.ronart.firebasebase.led"
+        tools:showIn="@layout/activity_led">
+
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/ledText"
+            android:textColor="@color/white"
+            android:hint="@string/LCD_hint"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/lcdSwitch"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp" />
+
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lcdSwitch"
+            android:checked="false"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/imageView"
+            android:src="@drawable/lcd"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignBottom="@+id/lcdSwitch" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Change LCD Display"
+            android:id="@+id/lcdTextView"
+            android:layout_alignParentTop="true"
+            android:textColor="@color/colorBlack"
+            android:layout_toEndOf="@+id/imageView" />
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ledText"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Red"
+                android:id="@+id/redTextView"
+                android:layout_alignTop="@+id/fab"
+                android:layout_alignStart="@+id/ledText" />
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/redSeekBar"
+                android:max="255"
+                android:progress="59"
+                android:indeterminate="false"
+                android:layout_below="@+id/redTextView"
+                android:layout_alignStart="@+id/redTextView"
+                android:layout_toStartOf="@+id/fab" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Green"
+                android:id="@+id/greenTextView"
+                android:layout_below="@+id/redSeekBar"
+                android:layout_alignStart="@+id/redSeekBar" />
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/greenSeekBar"
+                android:max="255"
+                android:progress="120"
+                android:indeterminate="false"
+                android:layout_below="@+id/greenTextView"
+                android:layout_alignStart="@+id/greenTextView"
+                android:layout_alignEnd="@+id/redSeekBar" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blue"
+                android:id="@+id/blueTextView"
+                android:layout_below="@+id/greenSeekBar"
+                android:layout_alignStart="@+id/greenSeekBar" />
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/blueSeekBar"
+                android:max="255"
+                android:progress="194"
+                android:indeterminate="false"
+                android:layout_below="@+id/blueTextView"
+                android:layout_alignStart="@+id/blueTextView"
+                android:layout_toStartOf="@+id/fab" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/linearLayout"
+                android:background="@drawable/colorpickershow"
+                android:id="@+id/imageView4" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:src="@android:drawable/sym_action_chat"
+                android:layout_marginLeft="@dimen/fab_margin"
+                android:layout_marginRight="@dimen/fab_margin"
+                android:layout_below="@+id/linearLayout"
+                android:layout_marginTop="40dp" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout> -->
+        </com.ramotion.foldingcell.FoldingCell>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/card_view2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_below="@id/card_view"
+        android:background="@color/colorPrimary">
+        <com.ramotion.foldingcell.FoldingCell
+            android:layout_width="match_parent"
+            android:id="@+id/folding_cellLights"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Light Moods"
+                    android:id="@+id/moodTextView"
+                    android:textColor="@color/colorBlack"
+                    android:layout_marginTop="34dp"
+                    android:layout_margin="8dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+                <NumberPicker
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/numberPicker"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/moodTextView"
+                    android:layout_centerHorizontal="true" />
+                <ToggleButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:id="@+id/LEDtoggleButton"
+                    android:checked="false"
+                    android:layout_margin="8dp"
+                    android:background="@color/white"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_below="@+id/numberPicker"
+                    android:layout_alignParentEnd="true" />
+
+            </RelativeLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/LED"
+                    android:id="@+id/textView3"
+                    android:textColor="@color/colorBlack"
+                    android:layout_gravity="center" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/imageView3"
+                    android:layout_margin="8dp"
+                    android:src="@drawable/ledlights"
+                    />
+            </FrameLayout>
+
+        </com.ramotion.foldingcell.FoldingCell><!--
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:background="@color/colorPrimary"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:context="com.galactus.ronart.firebasebase.led"
+            tools:showIn="@layout/activity_led">
+
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ledSwitch"
+                android:checked="false"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" />
+
+            <ToggleButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:id="@+id/LEDtoggleButton"
+                android:layout_margin="10dp"
+                android:checked="false"
+                android:background="@color/white"
+                android:layout_below="@+id/ledSwitch"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Light Moods"
+                android:id="@+id/moodTextView"
+                android:textColor="@color/colorBlack"
+                android:layout_below="@+id/LEDtoggleButton"
+                android:layout_alignEnd="@+id/numberPicker" />
+
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:id="@+id/imageView3"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/ledlights"
+                android:layout_above="@+id/LEDtoggleButton" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/LED"
+                android:id="@+id/textView3"
+                android:textColor="@color/colorBlack"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/imageView3" />
+
+            <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/numberPicker"
+                android:orientation="horizontal"
+                android:layout_below="@+id/moodTextView"
+                android:layout_centerHorizontal="true" />
+
+        </RelativeLayout> -->
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/card_view7"
+        android:layout_width="match_parent"
+        android:layout_below="@id/card_view2"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+        <com.ramotion.foldingcell.FoldingCell
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/folding_cell"
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_below="@+id/card_view2"
+            android:layout_height="wrap_content">
+            ​<FrameLayout
+            android:id="@+id/cell_content_view"
+            android:layout_width="match_parent"
+            android:layout_height="700dp"
+            android:background="@color/colorPrimary"
+            android:visibility="gone">
+
+
+            <ToggleButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Servo"
+                android:textColor="@color/colorBlack"
+                android:id="@+id/foldingCellServoToggle"
+                android:checked="false"
+                android:background="@color/white"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="100dp"
+                android:layout_gravity="center" />
+
+
+        </FrameLayout>
+            ​
+            <FrameLayout
+                android:id="@+id/cell_title_view"
+                android:layout_width="match_parent"
+                android:background="@color/colorPrimary"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/Servo"
+                    android:id="@+id/foldingCellTextViewServo"
+                    android:textColor="@color/colorBlack"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/foldingCellServoImage"
+                    android:src="@drawable/curtains"
+                    android:layout_margin="8dp"
+                    android:layout_gravity="left|center_vertical" />
+
+
+            </FrameLayout>
+            ​
+        </com.ramotion.foldingcell.FoldingCell>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

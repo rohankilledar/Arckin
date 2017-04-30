@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "806410101317",
+    "firebase_url": "https://arckinfinal.firebaseio.com",
+    "project_id": "arckinfinal",
+    "storage_bucket": "arckinfinal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:806410101317:android:9654e6e0f7f6ac42",
+        "android_client_info": {
+          "package_name": "galactus.ron.arckin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "806410101317-guhug625vphmu18irofir6e88648lf6t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5S5EE4spJUWxfriCftAKKTCBUQfWkqe0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
