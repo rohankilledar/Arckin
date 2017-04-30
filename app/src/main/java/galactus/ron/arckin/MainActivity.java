@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        
+
         mImageView= (ImageView) findViewById(R.id.mImageView);
 
         //
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity
                     case 0:
                         Intent intent = new Intent(MainActivity.this, notes.class);
                         intent.putExtra("id", position);
-                        intent.putExtra("UserName",name);
+                        intent.putExtra("UserName",uid);
                         startActivity(intent);
                         break;
                     case 1:
@@ -149,13 +149,13 @@ public class MainActivity extends AppCompatActivity
                     case 2:
                         Intent intent3 = new Intent(MainActivity.this, Alarm.class);
                         intent3.putExtra("id", position);
-                        intent3.putExtra("UserName",name);
+                        intent3.putExtra("UserName",uid);
                         startActivity(intent3);
                         break;
                     case 3:
                         Intent intent4 = new Intent(MainActivity.this, CalenderActivity.class);
                         intent4.putExtra("id", position);
-                        intent4.putExtra("UserName",name);
+                        intent4.putExtra("UserName",uid);
                         startActivity(intent4);
                         break;
                     case 4:
