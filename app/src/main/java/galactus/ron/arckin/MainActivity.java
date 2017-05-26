@@ -100,6 +100,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         mImageView= (ImageView) findViewById(R.id.mImageView);
 
         //
@@ -138,6 +139,9 @@ public class MainActivity extends AppCompatActivity
                         Intent intent = new Intent(MainActivity.this, notes.class);
                         intent.putExtra("id", position);
                         intent.putExtra("UserName",uid);
+                        intent.putExtra("Name",name);
+                        intent.putExtra("Email",email);
+                        intent.putExtra("Photourl",photoUrl);
                         startActivity(intent);
                         break;
                     case 1:
@@ -218,6 +222,8 @@ public class MainActivity extends AppCompatActivity
 
              email = user.getEmail();
             profileEmail.setText(email);
+
+
              photoUrl = user.getPhotoUrl();
             Picasso.with(this).load(photoUrl).into(profilePic);
 
@@ -229,6 +235,8 @@ public class MainActivity extends AppCompatActivity
             // authenticate with your backend server, if you have one. Use
             // FirebaseUser.getToken() instead.
             uid = user.getUid();
+
+
         }
 
 

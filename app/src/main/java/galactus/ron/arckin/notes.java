@@ -53,9 +53,16 @@ public class notes extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         Bundle bundle = getIntent().getExtras();
         String userNameRef = bundle.getString("UserName");
+        String DisplayName = bundle.getString("Name");
+        String UserEmail = bundle.getString("Email");
+        String UserPhoto = bundle.getString("Photourl");
+
         // Get a reference to the todoItems child items it the database
         final DatabaseReference userRef= database.getReference("Users/"+userNameRef+ "/toDoList");
-
+        final DatabaseReference userInfo= database.getReference("Users/"+userNameRef+"/userInformation");
+        userInfo.child("Name").setValue(DisplayName);
+        userInfo.child("EmailId").setValue(UserEmail);
+        userInfo.child("PhotoUrl").setValue(UserPhoto);
 
         // Assign a listener to detect changes to the child items
         // of the database reference.
