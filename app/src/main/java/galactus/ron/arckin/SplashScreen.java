@@ -14,9 +14,6 @@ import android.widget.Toast;
 public class SplashScreen extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener {
 
 
-
-
-    private static int SPLASH_TIME_OUT = 2000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +22,7 @@ public class SplashScreen extends AppCompatActivity implements ConnectivityRecei
         spinner = (ProgressBar)findViewById(R.id.progressBar2);
         spinner.setVisibility(View.VISIBLE);
         checkConnection();
+        int SPLASH_TIME_OUT = 2000;
         new Handler().postDelayed(new Runnable() {
 
             /*
