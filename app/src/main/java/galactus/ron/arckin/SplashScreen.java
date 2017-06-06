@@ -16,7 +16,7 @@ public class SplashScreen extends AppCompatActivity implements ConnectivityRecei
 
 
 
-    private static int SPLASH_TIME_OUT = 3000;
+    private static int SPLASH_TIME_OUT = 2000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +50,7 @@ public class SplashScreen extends AppCompatActivity implements ConnectivityRecei
     private void checkConnection() {
         boolean isConnected = ConnectivityReceiver.isConnected();
         if (isConnected) {
-            Toast.makeText(this,"Connected, Good to go ! :)",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Connected to Firebase ! :)",Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(this,"Disconnected, Please check your Internet Connection",Toast.LENGTH_LONG).show();
         }
@@ -72,7 +72,7 @@ public class SplashScreen extends AppCompatActivity implements ConnectivityRecei
     @Override
     public void onNetworkConnectionChanged(boolean isConnected) {
         if (isConnected) {
-            Toast.makeText(this,"Connected, Good to go ! :)",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Connected to Firebase! :)",Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(this,"Disconnected, Please check your Internet Connection",Toast.LENGTH_LONG).show();
         }

@@ -2,11 +2,9 @@ package galactus.ron.arckin;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -47,6 +45,7 @@ public class notes extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, android.R.id.text1);
 
         // Assign adapter to ListView
+        assert listView != null;
         listView.setAdapter(adapter);
 
         // Connect to the Firebase database
@@ -99,8 +98,11 @@ public class notes extends AppCompatActivity {
         final TextView textView=(TextView)findViewById(R.id.textView);
         animFadein = AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.blink);
+        assert textView != null;
         textView.startAnimation(animFadein);
+        assert text != null;
         text.setImeActionLabel("Add Notes", KeyEvent.KEYCODE_ENTER);
+
 
         text.setOnKeyListener(new View.OnKeyListener() {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -115,6 +117,7 @@ public class notes extends AppCompatActivity {
                     // Set the child's data to the value passed in from the text box.
                     childRef.setValue(text.getText().toString());
 
+                    //clear the input text field
                     InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(text.getWindowToken(), 0);
                     text.setText("");
@@ -126,13 +129,12 @@ public class notes extends AppCompatActivity {
         });
 
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        assert fab != null;
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Added to Notes", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-
-
 
                 // Create a new child with a auto-generated ID.
                 DatabaseReference childRef = userRef.push();

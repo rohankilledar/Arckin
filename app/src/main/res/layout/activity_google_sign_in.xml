@@ -12,18 +12,6 @@
     tools:context="galactus.ron.arckin.googleSignIn">
 
 
-    <ImageView
-        android:id="@+id/img_logo"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:src="@drawable/appicon"
-        tools:visibility="visible"
-        android:layout_marginEnd="63dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="120dp" />
-
     <TextView
         android:text="Arckin"
         android:layout_width="wrap_content"
@@ -31,15 +19,15 @@
         android:textSize="30dp"
         android:textColor="@color/colorBlack"
         android:id="@+id/nameTextView"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
     <com.google.android.gms.common.SignInButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/googleSignInButton"
-        android:layout_below="@+id/img_logo"
-        android:layout_alignParentStart="true">
+        android:layout_marginBottom="11dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
 
     </com.google.android.gms.common.SignInButton>
 
@@ -50,8 +38,18 @@
         android:hint="Device ID"
         android:textAlignment="center"
         android:ems="10"
+        android:id="@+id/deviceIDEditText"
         android:layout_above="@+id/googleSignInButton"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/deviceIDEditText" />
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:src="@drawable/appicon"
+        tools:visibility="visible"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

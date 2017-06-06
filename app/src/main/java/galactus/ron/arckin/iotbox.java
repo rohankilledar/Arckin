@@ -15,18 +15,11 @@ import android.widget.NumberPicker;
 import android.widget.SeekBar;
 import android.widget.Toast;
 import android.widget.ToggleButton;
-
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.ramotion.foldingcell.FoldingCell;
-
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -47,7 +40,6 @@ public class iotbox extends AppCompatActivity {
         bSeekBar = (SeekBar) findViewById(R.id.blueSeekBar);
 
         String inputText;
-
         String DeviceIdRef = null;
         try {
             FileInputStream fileInputStream = openFileInput(filename);
@@ -83,8 +75,11 @@ public class iotbox extends AppCompatActivity {
         final FoldingCell ledFoldingCell = (FoldingCell) findViewById(R.id.folding_cellLED);
         final FoldingCell lightsFoldingCell = (FoldingCell) findViewById(R.id.folding_cellLights);
         // set custom parameters(anim duration,color,flip count)
+        assert foldingCell != null;
         foldingCell.initialize(1000, Color.rgb(41, 121, 255), 3);
+        assert ledFoldingCell != null;
         ledFoldingCell.initialize(1000, Color.rgb(41, 121, 255), 5);
+        assert lightsFoldingCell != null;
         lightsFoldingCell.initialize(1000, Color.rgb(41, 121, 255), 5);
 // or with camera height parameter
         // foldingCell.initialize(30, 1000, Color.DKGRAY, 2);
@@ -113,6 +108,7 @@ public class iotbox extends AppCompatActivity {
         final String[] values = {"mood1", "mood2", "mood3", "mood4"};
         //Populate NumberPicker values from minimum and maximum value range
         //Set the minimum value of NumberPicker
+        assert np != null;
         np.setMinValue(0);
         //Specify the maximum value/number of NumberPicker
         np.setMaxValue(3);
@@ -133,13 +129,20 @@ public class iotbox extends AppCompatActivity {
 
 
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        assert fab != null;
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int rseekBarValue = rSeekBar.getProgress();
+                int rseekBarValue = 0;
+                if (rSeekBar != null) {
+                    rseekBarValue = rSeekBar.getProgress();
+                }
+                assert gSeekBar != null;
                 int gseekBarValue = gSeekBar.getProgress();
+                assert bSeekBar != null;
                 int bseekBarValue = bSeekBar.getProgress();
                 String hexColor = String.format("#%02x%02x%02x", rseekBarValue, gseekBarValue, bseekBarValue);
+                assert colorShow != null;
                 colorShow.setBackgroundColor(Color.parseColor(hexColor));
 
                 Snackbar.make(view, "Displaying on LED", Snackbar.LENGTH_LONG)
@@ -148,6 +151,7 @@ public class iotbox extends AppCompatActivity {
 
                 // Create a new child with a auto-generated ID.
                 //   DatabaseReference childRef = myRef.push();
+                assert text != null;
                 myRef.child("text").setValue(text.getText().toString());
                 myRef.child("Color").child("Red").setValue(rseekBarValue);
                 myRef.child("Color").child("Green").setValue(gseekBarValue);
@@ -179,6 +183,7 @@ public class iotbox extends AppCompatActivity {
 
 */
 
+        assert servoToggle != null;
         servoToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -194,6 +199,7 @@ public class iotbox extends AppCompatActivity {
             }
         });
 // perform seek bar change listener event used for getting the progress value
+        assert rSeekBar != null;
         rSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             int progressChangedValue = 0;
 
