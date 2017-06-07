@@ -23,14 +23,13 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import java.util.Map;
 
 public class CalenderActivity extends AppCompatActivity {
 
     EditText EventEditText;
     ImageButton closeCalendarButton;
     ListView listView;
-    int hour,min;
+    String hour,min;
     private String selectedDate,dateTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,7 +96,10 @@ public class CalenderActivity extends AppCompatActivity {
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
                 //Display the newly selected number from picker
                 //   moods[0] = Integer.toString(newVal);
-                hour=newVal;
+                if(newVal<9&&newVal>=0)
+                {hour=("0"+newVal);}
+                else hour=(""+newVal);
+
 
             }
         });
@@ -107,7 +109,9 @@ public class CalenderActivity extends AppCompatActivity {
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
                 //Display the newly selected number from picker
                 //   moods[0] = Integer.toString(newVal);
-                min=newVal;
+                if(newVal<9&&newVal>=0)
+                {min=("0"+newVal);}
+                else min=(""+newVal);
 
             }
         });

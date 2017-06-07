@@ -343,12 +343,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
-        if (id == R.id.change_email) {
-            //create a fragment that will give the option to change User profile
-            Toast.makeText(this, "Change email fragment", Toast.LENGTH_SHORT).show();
-
-        } else if (id == R.id.nav_camera) {
+            if (id == R.id.nav_camera) {
             Toast.makeText(this,"Camera Fragment",Toast.LENGTH_SHORT).show();
             Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
