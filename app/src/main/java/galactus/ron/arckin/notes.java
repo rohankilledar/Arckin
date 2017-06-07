@@ -35,8 +35,6 @@ public class notes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes);
 
-
-
         // Get ListView object from xml
         final ListView listView = (ListView) findViewById(R.id.listView);
 

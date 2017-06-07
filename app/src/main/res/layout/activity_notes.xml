@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:text="Tap to delete"
             android:id="@+id/textView"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorAccent"
             android:layout_gravity="center_horizontal" />
 
         <EditText

@@ -76,11 +76,11 @@ public class iotbox extends AppCompatActivity {
         final FoldingCell lightsFoldingCell = (FoldingCell) findViewById(R.id.folding_cellLights);
         // set custom parameters(anim duration,color,flip count)
         assert foldingCell != null;
-        foldingCell.initialize(1000, Color.rgb(41, 121, 255), 3);
+        foldingCell.initialize(1000, Color.rgb(105, 105, 105), 3);
         assert ledFoldingCell != null;
-        ledFoldingCell.initialize(1000, Color.rgb(41, 121, 255), 5);
+        ledFoldingCell.initialize(1000, Color.rgb(105, 105, 105), 5);
         assert lightsFoldingCell != null;
-        lightsFoldingCell.initialize(1000, Color.rgb(41, 121, 255), 5);
+        lightsFoldingCell.initialize(1000, Color.rgb(105, 105, 105), 5);
 // or with camera height parameter
         // foldingCell.initialize(30, 1000, Color.DKGRAY, 2);
         // attach click listener to folding cell
